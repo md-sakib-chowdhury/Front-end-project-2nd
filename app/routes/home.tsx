@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-import heroBackground from "../components/Assets/Hero.png";
+import heroBackground from "../components/Assets/Heroclean.png";
 /* ── HOOK: scroll fade-in ─────────────────────────────────── */
 function useFade() {
   const ref = useRef<HTMLElement | null>(null);
