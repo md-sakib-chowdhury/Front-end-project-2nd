@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-
+import heroBackground from "../components/Assets/Hero.png";
 /* ── HOOK: scroll fade-in ─────────────────────────────────── */
 function useFade() {
   const ref = useRef<HTMLElement | null>(null);
@@ -57,9 +57,10 @@ function useCountdown() {
 export default function Home() {
   const time = useCountdown();
   const [faqOpen, setFaqOpen] = useState<number>(0);
-  const [heroImg, setHeroImg] = useState(
-    "https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=1800&q=80"
-  );
+  const [heroImg, setHeroImg] = useState(heroBackground);
+  // const [heroImg, setHeroImg] = useState(
+    // "https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=1800&q=80"
+  // );
   const [imgInput, setImgInput] = useState("");
   const [showPanel, setShowPanel] = useState(true);
 
@@ -159,7 +160,8 @@ export default function Home() {
 
       {/* ───────────────── HERO ───────────────── */}
       <section id="home" style={{ minHeight: "100vh", background: "linear-gradient(160deg,#0f0f0f 0%,#1a2410 60%,#0f1a08 100%)", display: "flex", flexDirection: "column", justifyContent: "center", padding: "120px 48px 80px", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, background: `url('${heroImg}') center/cover no-repeat`, opacity: 0.25, transition: "background .4s" }} />
+        {/* <div style={{ position: "absolute", inset: 0, background: `url('${heroImg}') center/cover no-repeat`, opacity: 0.25, transition: "background .4s" }} /> */}
+        <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${heroImg})`, backgroundSize: "cover", backgroundPosition: "center", opacity: 0.4, transition: "opacity .4s" }} />
 
         <div style={{ position: "relative", zIndex: 2, maxWidth: 780 }}>
           <p className="ha1" style={{ fontFamily: "'Space Mono',monospace", fontSize: 11, color: "#b5f23d", letterSpacing: 3, textTransform: "uppercase", marginBottom: 20 }}>// cycling community platform</p>
